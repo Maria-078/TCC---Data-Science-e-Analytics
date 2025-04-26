@@ -102,10 +102,10 @@ coord_linhas <- data.frame(resultado_ac$rowcoord, Tipo = "Nível de Escolaridade
 coord_colunas <- data.frame(resultado_ac$colcoord, Tipo = "Ano", Categoria = colnames(dados_matriz))
 coord_total <- rbind(coord_linhas, coord_colunas)
 
-# Cores
+# Cores do mapa
 cores_perceptual <- c("Nível de Escolaridade" = "#8B0000", "Ano" = "#003366")
 
-# Mapa perceptual
+# Mapa
 ggplot(coord_total, aes(Dim1, Dim2, label = Categoria, color = Tipo)) +
   geom_point(size = 4, alpha = 0.7) +
   geom_text_repel(size = 5, fontface = "bold") +
